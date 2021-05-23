@@ -69,6 +69,13 @@ const App = () => {
           }, 5000)
           setNewName('')
       })
+      .catch(error => {
+        console.log(error.response.data)
+        setErrorMessage(
+          `${error.response.data.error}`
+        )
+        setErrorValue(true)
+      })
   }
   
   const addFilter = (e) => {
